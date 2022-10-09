@@ -1,0 +1,13 @@
+version: '3.2'
+
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:1.21.6
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /docker/nginx/config:/etc/nginx
+      - /docker/nginx/certs:/etc/nginx/cert
+    restart: always
